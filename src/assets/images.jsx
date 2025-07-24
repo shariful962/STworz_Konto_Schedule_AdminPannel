@@ -1,5 +1,5 @@
 import lg from "./logo.svg"; // main logo
-import authmain from "./men.svg"; // auth main img
+import authmain from "./women.svg"; // auth main img
 import scheduleCall from "./icons/schedule/phone.svg";
 import scheduleVideo from "./icons/schedule/video.svg";
 import scheduleBot from "./icons/schedule/bot.svg";

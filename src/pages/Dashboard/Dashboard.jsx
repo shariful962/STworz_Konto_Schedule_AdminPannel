@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { TbUsers } from "react-icons/tb";
 import { LuUserX } from "react-icons/lu";
 import { Search, Eye, EyeOff } from "lucide-react";
+import langIcon from "../../assets/translate.svg"
+import { useTranslation } from "react-i18next";
+import { ChevronDown, Calendar } from "lucide-react";
+// const [isOpen, setIsOpen] = useState(false);
+
 
 const users = [
   {
@@ -49,7 +54,11 @@ const users = [
 ];
 
 const Dashboard = () => {
+  const { t, i18n } = useTranslation();
   const [visibleUsers, setVisibleUsers] = useState({});
+  const [language, setLanguage] = useState(i18n.language === "pl" ? "Polish" : "English");
+  const [isOpenT, setIsOpenT] = useState(false);
+  const languageList = ["English", "Polish"];
 
   const toggleVisibility = (id) => {
     setVisibleUsers((prev) => ({
@@ -57,12 +66,66 @@ const Dashboard = () => {
       [id]: !prev[id],
     }));
   };
+  
 
+   const changeLanguage = (ln)=>{
+    const langCode = ln === "English" ? "en" : "pl";
+    i18n.changeLanguage(langCode);
+    setLanguage(ln);
+  }
  
 
   return (
     <div className="p-4 font-Roboto">
-      <h1 className="font-semibold text-textClr text-[2rem]">Dashboard</h1>
+      <div className="flex md:items-center justify-between flex-col md:flex-row gap-3">
+        <h1 className="font-semibold text-textClr text-[2rem]">Dashboard</h1>
+        
+        {/* Custom Dropdown */}
+          <div className="flex gap-5 justify-end">
+            <div className="relative font-Inter">
+              <button
+                onClick={() => {
+                  setIsOpenT(!isOpenT);
+                }}
+                className="flex items-center border border-Primary p-2 rounded-lg cursor-pointer"
+              >
+                <div className="flex items-center  gap-2">
+                  <img src={langIcon} alt="translate ico" />
+                  <span className="font-medium">
+                    {language === "English" ? "English" : "Polish"}
+                  </span>
+                </div>
+                <ChevronDown
+                  size={16}
+                  className={`text-gray-400 transition-transform duration-200 ${
+                    isOpenT ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {isOpenT && (
+                <>
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-blue-500 rounded-md shadow-lg z-20 overflow-hidden">
+                    {languageList.map((ln, index) => (
+                      <button
+                        key={index}
+                        onClick={() => {
+                          setIsOpenT(false);
+                          changeLanguage(ln);
+                        }}
+                        className={`flex items-center gap-2 w-full px-4 py-2 text-left hover:bg-gray-100 transition-colors duration-150 ${
+                          language === ln ? "text-blue-600" : "text-gray-600"
+                        }`}
+                      >
+                        {ln}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+            
+          </div>
+      </div>
 
       {/* Subscriber and Non-Subscriber Summary */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-8.5">

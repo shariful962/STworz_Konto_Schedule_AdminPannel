@@ -1,0 +1,41 @@
+{
+  "auth": {
+    "login": "Zaloguj się",
+    "adminLogin": "Logowanie administratora",
+    "logout": "Wyloguj się",
+    "signup": "Zapisać się",
+    "signin": "Zaloguj się",
+    "registration": "Rejestracja",
+    "name": "Nazwa",
+    "email": "E-mail",
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "dontHaveAccount": "Nie masz konta?",
+    "doYouHaveAccount": "Czy masz konto?",
+    "or": "Lub",
+    "loginWithGoogle": "Zaloguj się za pomocą konta Google",
+    "forgotPass": "Zapomniałeś hasła",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "forgotPassDesc": "Wprowadź swój e-mail, aby zresetować hasło",
+    "yourEmail": "Twój e-mail",
+    "resetPass": "Zresetuj hasło",
+    "setNewPass": "Ustaw nowe hasło",
+    "newPassDesc": "Utwórz nowe hasło. Upewnij się, że różni się od poprzednich dla bezpieczeństwa",
+    "updatePass": "Zaktualizuj hasło",
+    "checkEmail": "Sprawdź swój e-mail",
+    "checkEmailDescLine1": "Wysłaliśmy link resetujący na adres",
+    "checkEmailDescLine2": "wprowadź 5-cyfrowy kod podany w e-mailu",
+    "verifyCode": "Zweryfikuj kod",
+    "haventGotEmail": "Nie otrzymałeś e-maila?",
+    "resentEmail": "Wyślij ponownie",
+
+    "placeholder": {
+      "email": "Wpisz swój e-mail",
+      "password": "Wprowadź hasło",
+      "confirmPassword": "Potwierdź hasło",
+      "name": "Wpisz swoje imię i nazwisko",
+      "newPass": "Wprowadź nowe hasło",
+      "reEnter": "Ponownie wprowadź hasło"
+    }
+  }
+}

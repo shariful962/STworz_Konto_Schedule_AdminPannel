@@ -1,6 +1,7 @@
 {
   "auth": {
     "login": "Log In",
+    "adminLogin": "Admin Login",
     "logout": "Log Out",
     "signup": "Sign up",
     "signin": "Sign in",
@@ -14,7 +15,7 @@
     "or": "Or",
     "loginWithGoogle": "Log in with google account",
     "forgotPass": "Forgot password",
-    "forgotPassword": "Forgotten password?",
+    "forgotPassword": "Forget password",
     "forgotPassDesc": "Please enter your email to reset the password",
     "yourEmail": "Your Email",
     "resetPass": "Reset Password",

@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/NavLogo2.png";
 import { FcGoogle } from "react-icons/fc";
 import mail from "../../assets/icons/auth/mail.svg";
 import women from "../../assets/women.svg";
 import { Eye, EyeOff } from "lucide-react";
 import { FaUserEdit } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const SignIn = () => {
+  const {t} =  useTranslation()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -22,26 +24,26 @@ const SignIn = () => {
   return (
     <div className="flex mx-auto min-h-screen font-Inter">
       {/* left content  */}
-      <div className="w-full md:w-1/2">
+      <div className="w-full px-4 lg:px-0 md:w-1/2">
         {/* logo section  */}
         <div className="m-5">
-          <img src={logo} alt="a animate picture" />
+          <img src={logo} alt="a animate picture" className="w-[180px]" />
         </div>
         {/* form section area  */}
         <div className="max-w-md  mx-auto mt-16 lg:mt-44">
           <form onSubmit={handleSignIn}>
-            <h1 className="font-medium md:text-[] text-[2rem] text-textClr text-center">
-             Admin Login
+            <h1 className="font-medium md:text-[1.75rem] text-[2rem] text-textClr text-center">
+             {t("auth.adminLogin")}
             </h1>
             {/* email input  */}
-            <div>
+            <div className="mt-6">
               <label className="block mb-1 font-Inter font-medium text-textClr">
-                Email{" "}
+                {t("auth.email")} {" "}
               </label>
               <div className="form-control">
                 <input
                   type="email"
-                  placeholder="Enter Email"
+                  placeholder={t("auth.placeholder.email")}
                   className=" outline-none flex-1 text-gray-800"
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -52,7 +54,7 @@ const SignIn = () => {
             {/* password input  */}
             <div className="my-9">
               <label className="block mb-1 font-Inter font-medium text-textClr">
-                Password
+                {t("auth.password")}
               </label>
               <div className="form-control">
                 <input
@@ -61,7 +63,7 @@ const SignIn = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   className="bg-transparent outline-none flex-1 text-gray-800"
-                  placeholder="Enter Password"
+                  placeholder={t("auth.placeholder.password")}
                 />
                 <button
                   type="button"
@@ -81,7 +83,7 @@ const SignIn = () => {
                   onClick={() => navigate("/forgotPassword")}
                   className="text-Primary text-sm hover:underline"
                 >
-                  Forget Password
+                  {t("auth.forgotPassword")}
                 </button>
               </div>
             </div>
@@ -89,15 +91,15 @@ const SignIn = () => {
             {/* submition button area  */}
 
             <button type="submit" className="mt-2 cursor-pointer text-lg  font-bold font-Inter w-full bg-Primary hover:bg-Primary/90 text-white py-3 rounded-xl transition duration-300 ">
-              Log In
+              {t("auth.login")}
             </button>
             
           </form>
 
-          <h1 className="text-center my-7">Or</h1>
+          <h1 className="text-center my-7">{t("auth.or")}</h1>
 
           <div className="sign_with_goole">
-            <FcGoogle size={28} /> Log in with google account
+            <FcGoogle size={28} /> {t("auth.loginWithGoogle")}
           </div>
         </div>
       </div>
