@@ -1,5 +1,6 @@
-import lg from "./logo.svg"; // main logo
+import lg from "./NavLogo2.png"; // main logo
 import authmain from "./women.svg"; // auth main img
+import profile_pic from "./pp.png"
 import scheduleCall from "./icons/schedule/phone.svg";
 import scheduleVideo from "./icons/schedule/video.svg";
 import scheduleBot from "./icons/schedule/bot.svg";
@@ -9,11 +10,8 @@ import scheduleCalender from "./icons/schedule/calendar.svg"
 const WebIcons = {
   logo: lg, // main logo
   authMain: authmain, // auth bg
-  scheduleCall: scheduleCall, // schedule call ico
-  scheduleVideo: scheduleVideo, // schedule video call ico
-  scheduleBot: scheduleBot, // schedule bot ico
-  scheduleSend: scheduleSend, // schedule send ico
-  scheduleCalender: scheduleCalender // schedule calender ico
+  profilePic: profile_pic //sidebar profile section  
+
 };
 
 export default WebIcons;

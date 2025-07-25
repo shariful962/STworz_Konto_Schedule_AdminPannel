@@ -77,8 +77,9 @@ const Dashboard = () => {
 
   return (
     <div className="p-4 font-Roboto">
-      <div className="flex md:items-center justify-between flex-col md:flex-row gap-3">
-        <h1 className="font-semibold text-textClr text-[2rem]">Dashboard</h1>
+     
+       <div className="flex md:items-center justify-between flex-col md:flex-row gap-3">
+        <h1 className="font-semibold text-textClr text-[2rem] mt-6 md:mt-0">{t("dashboard.title")}</h1>
         
         {/* Custom Dropdown */}
           <div className="flex gap-5 justify-end">
@@ -131,7 +132,7 @@ const Dashboard = () => {
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-8.5">
         <div className="bg-[#F4F4F4] w-full md:w-1/2 p-5 shadow-[0_0_2px_0_rgba(0,0,0,0.25)]">
           <h1 className="text-[2rem] font-medium leading-5 tracking-[.5px] mb-2 text-textClr/40">
-            Total Subscriber
+            {t("dashboard.totalSubscriber")}
           </h1>
           <p className="flex items-center gap-x-2 font-medium text-3xl text-Primary">
             <TbUsers /> <span>313</span>
@@ -139,7 +140,7 @@ const Dashboard = () => {
         </div>
         <div className="bg-[#F4F4F4] w-full md:w-1/2 p-5 shadow-[0_0_2px_0_rgba(0,0,0,0.25)]">
           <h1 className="text-[2rem] font-medium leading-5 tracking-[.5px] mb-2 text-textClr/40">
-            Non Subscribers
+            {t("dashboard.nonSubsciber")}
           </h1>
           <p className="flex items-center gap-x-2 font-medium text-3xl text-red-400">
             <LuUserX /> <span>313</span>
@@ -150,17 +151,18 @@ const Dashboard = () => {
       {/* Search Bar */}
       <div className="mt-10.5">
         <h1 className="font-medium text-[1.75rem] text-textClr mb-6.5">
-          Manage User
+         {t("dashboard.managerUser")}
         </h1>
         <div className="flex items-center w-full px-3 py-2 bg-white border border-Primary h-11 rounded-sm">
           <Search className="text-Primary w-5 h-5 mr-2" />
           <input
             type="text"
-            placeholder="Search Users..."
+            placeholder={t("dashboard.searchPlaceholder")}
             className="w-full outline-none text-sm text-gray-700 placeholder-Primary bg-transparent"
           />
         </div>
       </div>
+     
 
       {/* User List */}
       <div className="w-full mt-4">
@@ -187,7 +189,7 @@ const Dashboard = () => {
             </div>
 
             {/* Right side: Eye toggle & Subscriber status button */}
-            <div className="flex gap-x-3 items-center">
+            <div className="flex flex-col md:flex-row gap-3 items-center">
               <button
                 type="button"
                 onClick={() => toggleVisibility(emp.id)}
@@ -201,13 +203,13 @@ const Dashboard = () => {
               </button>
 
               <button
-                className={`cursor-pointer text-sm text-white px-3 py-3 w-32 rounded-full ${
+                className={`cursor-not-allowed text-sm text-white px-4 py-3 w-[140px] rounded-full ${
                   emp.user_type === "Subscriber"
                     ? "bg-[#77E9D6]"
                     : "bg-[#CCCCCC]"
                 }`}
               >
-                {emp.user_type}
+                {emp.user_type === "Subscriber" ? t("dashboard.subscriber") : t("dashboard.non")}
               </button>
             </div>
           </div>

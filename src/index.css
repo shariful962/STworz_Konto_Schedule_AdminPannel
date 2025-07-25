@@ -22,6 +22,10 @@
     @apply mt-5 cursor-pointer text-xl font-bold font-Inter w-full bg-Primary hover:bg-Primary/90 text-white py-3 rounded-xl transition duration-300
 }
 
+.submit_btn {
+    @apply mt-5 cursor-pointer text-xl font-bold font-Inter w-full bg-Primary hover:bg-Primary/90 text-white py-3 rounded-xl transition duration-300
+}
+
 /* sign in with google button  */
 .sign_with_goole {
     @apply flex gap-x-2 items-center justify-center w-full text-center bg-[#EEEEEEEE] px-3 py-3 rounded-[10px] cursor-pointer

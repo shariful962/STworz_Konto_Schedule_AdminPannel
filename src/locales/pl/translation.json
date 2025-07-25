@@ -37,5 +37,19 @@
       "newPass": "Wprowadź nowe hasło",
       "reEnter": "Ponownie wprowadź hasło"
     }
-  }
+  },
+  "sidebar": {
+  "name": "Nazwa",
+  "save": "Zapisz"
+},
+"dashboard": {
+  "title": "Panel",
+  "totalSubscriber": "Łączna liczba subskrybentów",
+  "subscriber": "Subskrybent",
+  "nonSubsciber": "Nie subskrybenci",
+  "non": "Nie-subskrybenci",
+  "managerUser": "Zarządzaj użytkownikami",
+  "searchPlaceholder": "Szukaj użytkowników..."
+}
+
 }

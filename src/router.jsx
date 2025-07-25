@@ -6,6 +6,7 @@ import {
 import RootLayout from "./RootLayout"; // RootLayout that wraps around child components
 import Dashboard from "./pages/Dashboard/Dashboard";
 import SignIn from "./pages/Auth/SignIn";
+import ForgotPass from "./pages/Auth/ForgotPass";
 
 
 export const router = createBrowserRouter([

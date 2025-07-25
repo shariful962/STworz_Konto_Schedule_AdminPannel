@@ -37,5 +37,20 @@
       "newPass": "Enter your new password",
       "reEnter": "Re-enter password"
     }
+  },
+  "sidebar": {
+    "name": "Name",
+    "save": "Save"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalSubscriber": "Total Subscriber",
+    "subscriber": "Subscriber",
+    "nonSubsciber": "Non Subscribers",
+    "non": "Non-Subscribers",
+    "managerUser": "Manage User",
+    "searchPlaceholder": "Search Users..."
+    
+
   }
 }
