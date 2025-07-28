@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const ForgotPassword = () => {
+const ForgotPassword = ({email,setEmail,onSubmit}) => {
   const { t } = useTranslation();
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
 
   return (
     <div>
@@ -23,6 +23,7 @@ const ForgotPassword = () => {
             <div className="form-control my-2">
               <input 
                 type="email"
+                value={email}
                 placeholder={t("auth.placeholder.email")}
                 className=" outline-none flex-1 text-gray-800"
                 onChange={(e) => setEmail(e.target.value)}
@@ -30,7 +31,7 @@ const ForgotPassword = () => {
             </div>
           </div>
 
-          <button type="submit" className="submit_btn">
+          <button type="submit" className="submit_btn" onClick={onSubmit}>
             {t("auth.resetPass")}
           </button>
         </form>

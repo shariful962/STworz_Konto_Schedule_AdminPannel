@@ -4,7 +4,6 @@ import { IoHomeOutline } from "react-icons/io5";
 import { FaCamera, FaUserFriends } from "react-icons/fa";
 import { MdOutlineSchedule } from "react-icons/md";
 import { TbFileExport } from "react-icons/tb";
-import pp from "../../assets/pp.png";
 import { useNavigate } from "react-router-dom";
 import { CiEdit } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
@@ -47,7 +46,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         } sm:translate-x-0 p-6 flex flex-col justify-between border-r border-gray-400`}
     >
       {/* Logo + Nav */}
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-10 mt-8.5 md:mt-0">
         <img src={WebIcons.logo} alt="Logo" className="w-32" />
 
         <div className="flex flex-col gap-3">
@@ -108,7 +107,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 className="w-20 h-20 rounded-full object-cover"
               />
               <button
-                className="absolute bottom-0 right-[calc(50%-40px)] bg-white border p-1 rounded-full"
+                className="absolute bottom-0 right-[calc(50%-40px)] bg-white border p-2 rounded-full"
                 onClick={() => fileInputRef.current.click()}
               >
                 <FaCamera className="text-gray-600" />
