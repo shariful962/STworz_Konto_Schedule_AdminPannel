@@ -139,7 +139,7 @@ const Dashboard = () => {
           </p>
         </div>
         <div className="bg-[#F4F4F4] w-full md:w-1/2 px-2 py-3 md:p-5 shadow-[0_0_2px_0_rgba(0,0,0,0.25)]">
-          <h1 className="text-[2rem] font-medium leading-5 tracking-[.5px] mb-2 text-textClr/40">
+          <h1 className="text-[2rem] font-medium leading-7 tracking-[.5px] mb-2 text-textClr/40">
             {t("dashboard.nonSubsciber")}
           </h1>
           <p className="flex items-center gap-x-2 font-medium text-3xl text-red-400">
