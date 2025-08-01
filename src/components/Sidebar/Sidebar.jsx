@@ -10,9 +10,8 @@ import { useTranslation } from "react-i18next";
 import { RxCross2 } from "react-icons/rx";
 import { MdDashboard } from "react-icons/md";
 
-
 const Sidebar = ({ isOpen, toggleSidebar }) => {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   const [selectedNav, setSelectedNav] = useState("dashboard");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [name, setName] = useState("John Kabir");
@@ -22,12 +21,17 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
   const menuItems = [
     // { name: "Dashboard", path: "/dashboard", ico: MdDashboard },
-    {id:"dashboard", name: t("dashboard.title"), path: "/dashboard", ico: MdDashboard },
+    {
+      id: "dashboard",
+      name: t("dashboard.title"),
+      path: "/dashboard",
+      ico: MdDashboard,
+    },
   ];
 
   const navigate = useNavigate();
 
-   const handleImageChange = (e) => {
+  const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
@@ -87,7 +91,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <h2 className="font-semibold">{name}</h2>
             <p className="text-sm text-gray-500">{email}</p>
           </div>
-          <div><CiEdit size={24} className="absolute top-0 right-0 cursor-pointer" onClick={() => setIsModalOpen(true)}/></div>
+          <div>
+            <CiEdit
+              size={24}
+              className="absolute top-0 right-0 cursor-pointer"
+              onClick={() => setIsModalOpen(true)}
+            />
+          </div>
         </div>
         <button
           onClick={() => navigate("/")}
@@ -96,7 +106,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           {t("auth.logout")}
         </button>
 
-         {/* profile section editable modal  */}
+        {/* profile section editable modal  */}
         {/* Modal */}
         {isModalOpen && (
           <div className="absolute bottom-[100%] left-1/2 -translate-x-1/2 w-[95%] bg-white border border-gray-200 rounded-xl p-4 shadow-xl z-50 transition-all duration-300">
@@ -121,17 +131,18 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               />
             </div>
 
-          <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium text-textClr">{t("sidebar.name")}</label>
+            <div className="flex flex-col gap-1">
+              <label className="text-sm font-medium text-textClr">
+                {t("sidebar.name")}
+              </label>
               <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full mb-2 p-2 border rounded outline-0"
-              placeholder="Name"
-            />
-          </div>
-            
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full mb-2 p-2 border rounded outline-0"
+                placeholder="Name"
+              />
+            </div>
 
             <button
               onClick={() => setIsModalOpen(false)}

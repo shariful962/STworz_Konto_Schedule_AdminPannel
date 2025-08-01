@@ -53,6 +53,7 @@ const users = [
 
 const Dashboard = () => {
   const { t, i18n } = useTranslation();
+  const [search, setSearch] = useState("");
 
   const [visibleUsers, setVisibleUsers] = useState(() =>
     users.reduce((acc, user) => {
@@ -79,6 +80,11 @@ const Dashboard = () => {
     i18n.changeLanguage(langCode);
     setLanguage(ln);
   };
+
+  const filterUsers = users.filter((user)=>(
+    user.name.toLowerCase().includes(search.toLowerCase()) ||
+    user.email.toLowerCase().includes(search.toLowerCase())  
+  ))
 
   return (
     <div className="p-4 font-Roboto h-screen bg-white overflow-hidden">
@@ -159,13 +165,15 @@ const Dashboard = () => {
             type="text"
             placeholder={t("dashboard.searchPlaceholder")}
             className="w-full outline-none text-sm text-gray-700 placeholder-Primary bg-transparent"
+            value={search}
+            onChange={(e)=>setSearch(e.target.value)}
           />
         </div>
       </div>
 
       {/* User List */}
       <div className="w-full mt-3 md:mt-4 overflow-y-auto h-[500px]">
-        {users.map((emp) => (
+        {filterUsers.map((emp) => (
           <div
             key={emp.id}
             className="flex w-full items-center justify-between bg-white p-2 md:p-4 mb-3 border border-textClr/20 rounded"

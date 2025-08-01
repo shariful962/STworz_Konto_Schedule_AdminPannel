@@ -15,7 +15,7 @@ const RootLayout = () => {
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
 
   return (
-    <div className="flex h-screen bg-gray-50 relative">
+    <div className="flex  h-screen bg-gray-50 relative">
       {/* Sidebar */}
       {showSidebar && (
         <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
